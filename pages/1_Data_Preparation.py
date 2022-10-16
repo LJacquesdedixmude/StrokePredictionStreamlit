@@ -1,8 +1,17 @@
 import streamlit as st
-import matplotlib
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-st.subheader(" Data Preparation")
+st.title("Data Preparation")
+
+st.write("In this part we will try to prepare the dataset for machine learning. Overall they datset is already pretty clean and they are few operations to be made.")
+
+st.subheader("Description of the dataset for the attributes with numerical values") 
+st.write("We can see that they are some missing values for the BMI")
+df = pd.read_csv('C:/Users/ljacquesdedixmude/streamlit_SP/Data/training-stroke.csv')
+st.dataframe(df.describe())
+
 st.write("""
 
 * Handle Missing Values
@@ -17,3 +26,8 @@ categorical attributes ("Gender", "Married", "Employement_Type", "Urban_Rual", "
 PyCaret Library we don't need to as it handles categorical variables.
 
 """)
+
+
+
+
+    
