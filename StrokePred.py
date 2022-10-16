@@ -3,19 +3,38 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from multiapp import MultiApp
-from apps import home, dataprep
 
-app = MultiApp()
+st.set_page_config(
+    page_title="StrokePred",
+)
 
-st.title("Stroke Prediction Project")
+st.write("# Welcome to Streamlit! 👋")
+
+st.sidebar.success("Select a demo above.")
+
+st.markdown(
+    """
+    Streamlit is an open-source app framework built specifically for
+    Machine Learning and Data Science projects.
+    **👈 Select a demo from the sidebar** to see some examples
+    of what Streamlit can do!
+    ### Want to learn more?
+    - Check out [streamlit.io](https://streamlit.io)
+    - Jump into our [documentation](https://docs.streamlit.io)
+    - Ask a question in our [community
+        forums](https://discuss.streamlit.io)
+    ### See more complex demos
+    - Use a neural net to [analyze the Udacity Self-driving Car Image
+        Dataset](https://github.com/streamlit/demo-self-driving)
+    - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
+"""
+)
+
+st.title("Stroke Prediction Project2")
 
 st.markdown("Stroke, (un accident vasculaire cérébral (AVC) in French and cerebrovasculair accident (CVA) in Dutch), is a sudden neurological deficit of vascular origin caused by an infarction or hemorrhage in the brain. In French and Dutch the term ""accident"" emphasizes the sudden or abrupt nature of the symptoms, but in most cases the causes are internal (e.g., age, diet, lifestyle). The World Health Organization (WHO) has found that stroke is the second leading cause of death globally. Actually, stroke is responsible for approximately 11% of total deaths.")
 
 st.markdown("In this project we will train different Machine Learning Models to predict probabilities of having a stroke based on health related attributes (e.g. Age, Gender, BMI,...). We will here present the DataSet, the models, and an interface where you can enter your own health related data and have the (best) model predict your risk of having a stroke")
-app.add_app("Home", home.app)
-app.add_app("Data prep", dataprep.app)
-app.run()
 
 st.markdown("""
 
