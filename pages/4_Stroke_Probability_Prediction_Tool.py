@@ -10,8 +10,8 @@ st.markdown("""
     
 You can input your data here below to have a stroke probability prediction. 
 Here the model used is Random Forest Classifier with parameters 
-'n_estimators': 1200, 'min_samples_split': 70, 'min_samples_leaf': 18, 'max_features': 'sqrt', 
-'max_depth': 30, 'bootstrap': True. 
+'n_estimators': 1200, 'min_samples_split': 70, 'min_samples_leaf': 18,
+'max_features': 'sqrt', 'max_depth': 30, 'bootstrap': True. (See SK Learn for Documentation)
 
 You can also modify the inputs to see how the probability would evolve. 
 
