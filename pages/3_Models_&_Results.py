@@ -40,12 +40,12 @@ tune the hyperparamers with gridsearch to improve model performance.
 
 st.markdown('##### **ROC AUC Plot:**')
 
-img =Image.open("C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\RFCROC.png")
+img =Image.open("C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Image\\RFCROC.png")
 st.image(img, caption='ROC AUC SCORE: 0.809')
 
 st.markdown('#### **Confusion Matrix:**')
 
-img =Image.open("C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\RFCCM.png")
+img =Image.open("C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Image\\RFCCM.png")
 st.image(img, caption='Confusion Matrix:')
 
 st.markdown("""
