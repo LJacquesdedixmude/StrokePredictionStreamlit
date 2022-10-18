@@ -8,22 +8,9 @@ st.title("Stroke Probability Prediction Tool")
 
 st.markdown("""
     
-You can select a predictive mode, input your data here below to compute a stroke probability prediction. 
+Select a model in the dropdown, input your data here below & the model will predict your stroke probability. 
 
-**The Different Models:**
-
-* Random Forest Classifier:
-parameters: 'n_estimators': 1200, 'min_samples_split': 70, 'min_samples_leaf': 18,
-'max_features': 'sqrt', 'max_depth': 30, 'bootstrap': True. 
-
-Documentation : **Scikit-Learn**: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
-
-You can also modify the inputs to see how the probability would evolve. 
-
-* Gradient Boosting Classifier:
-parameters: 'n_estimators': 300, 'min_samples_split': 20, 'min_samples_leaf': 1, 'max_features': 'auto', 'max_depth': 3, 'learning_rate': 0.01
-
-Documentation : **Scikit-Learn**: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html
+You can also modify the inputs to see how the stroke probability evolves. 
 
 **Disclaimer** : This Project and the Stroke Probability Prediction Tool are for educational purpose only.
 
@@ -31,16 +18,34 @@ Documentation : **Scikit-Learn**: https://scikit-learn.org/stable/modules/genera
 
 st.subheader("Choose Model Here-Under")
 # Choose Predictive Model Here-Under
-Model = st.selectbox("Models", ["Random Forest Classifier", "Gradient Boosting Classifier"])
+Model = st.selectbox("Models", ["Random Forest Classifier", "Gradient Boosting Classifier", "Logistic Regression"])
 pickle_in = open('C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Code\\RFC.pkl', 'rb')
 pickle_in2 = open('C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Code\\GBC.pkl', 'rb')
+pickle_in3 = open('C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Code\\LR.pkl', 'rb')
 
 Selected_Model=pickle_in
 
 if Model=="Random Forest Classifier":
     Selected_Model=pickle_in
+    st.markdown("""
+Parameters: 'n_estimators': 1200, 'min_samples_split': 70, 'min_samples_leaf': 18, 'max_features': 'sqrt', 'max_depth': 30, 'bootstrap': True. 
+
+Documentation : **Scikit-Learn**: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
+""")
 elif Model=="Gradient Boosting Classifier":
     Selected_Model=pickle_in2
+    st.markdown("""
+Parameters: 'n_estimators': 300, 'min_samples_split': 20, 'min_samples_leaf': 1, 'max_features': 'auto', 'max_depth': 3, 'learning_rate': 0.01
+
+Documentation : **Scikit-Learn**: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html
+    """)
+elif Model=="Logistic Regression":
+    Selected_Model=pickle_in3
+    st.markdown("""
+Parameters:   C=0.602, class_weight={}, dual=False, fit_intercept=True, intercept_scaling=1, l1_ratio=None, max_iter=1000, multi_class='auto', n_jobs=None, penalty='l2', solver='lbfgs', tol=0.0001, verbose=0,warm_start=False
+
+Documentation : **Scikit-Learn**: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
+""")
 
 classifier = pickle.load(Selected_Model)
 
