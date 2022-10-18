@@ -18,8 +18,8 @@ def main():
     page = st.selectbox(
         "Attributes",
         [
-            "Age Plot",
-            "BMI Plot",
+            "Age",
+            "Body Mass Index",
             "Employment",
             "Glucose Level", 
             "Hypertension",
@@ -30,7 +30,7 @@ def main():
 
     fig = plt.figure(figsize=(10, 4))
 
-    if page == "Age Plot":
+    if page == "Age":
         sns.histplot(x = "Age", data = df, hue='Gender', multiple='stack')
     
     if page == "Smoker":
@@ -48,7 +48,7 @@ def main():
     if page == "Glucose Level":
         sns.histplot(x = "Mean_Glucose_Level", data = df, hue='Gender', multiple='stack')
 
-    elif page == "BMI Plot":
+    elif page == "Body Mass Index":
         sns.histplot(x = "BodyMassIndex", data = df, hue='Gender', multiple='stack')
 
     st.pyplot(fig)
