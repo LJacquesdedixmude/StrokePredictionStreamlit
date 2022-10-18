@@ -8,19 +8,41 @@ st.title("Stroke Probability Prediction Tool")
 
 st.markdown("""
     
-You can input your data here below to have a stroke probability prediction. 
-Here the model used is Random Forest Classifier with parameters 
-'n_estimators': 1200, 'min_samples_split': 70, 'min_samples_leaf': 18,
-'max_features': 'sqrt', 'max_depth': 30, 'bootstrap': True. (See SK Learn for Documentation)
+You can select a predictive mode, input your data here below to compute a stroke probability prediction. 
+
+**The Different Models:**
+
+* Random Forest Classifier:
+parameters: 'n_estimators': 1200, 'min_samples_split': 70, 'min_samples_leaf': 18,
+'max_features': 'sqrt', 'max_depth': 30, 'bootstrap': True. 
+
+Documentation : **Scikit-Learn**: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
 
 You can also modify the inputs to see how the probability would evolve. 
 
-**Disclaimer** : This Project and Stroke Probability Prediction Tool for educational purpose only.
+* Gradient Boosting Classifier:
+parameters: 'n_estimators': 300, 'min_samples_split': 20, 'min_samples_leaf': 1, 'max_features': 'auto', 'max_depth': 3, 'learning_rate': 0.01
+
+Documentation : **Scikit-Learn**: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html
+
+**Disclaimer** : This Project and the Stroke Probability Prediction Tool are for educational purpose only.
 
 """)
+
+st.subheader("Choose Model Here-Under")
 # Choose Predictive Model Here-Under
-pickle_in = open('C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Code\\FA1.pkl', 'rb')
-classifier = pickle.load(pickle_in)
+Model = st.selectbox("Models", ["Random Forest Classifier", "Gradient Boosting Classifier"])
+pickle_in = open('C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Code\\RFC.pkl', 'rb')
+pickle_in2 = open('C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Code\\GBC.pkl', 'rb')
+
+Selected_Model=pickle_in
+
+if Model=="Random Forest Classifier":
+    Selected_Model=pickle_in
+elif Model=="Gradient Boosting Classifier":
+    Selected_Model=pickle_in2
+
+classifier = pickle.load(Selected_Model)
 
 # this is the main function in which we define our webpage 
 def main():
@@ -96,8 +118,8 @@ def main():
                       'Hypertension':[Hypertension], 
                       'Had_Heart_Disease':[Had_Heart_Disease], 
                       'Mean_Glucose_Level':[Mean_Glucose_Level],
+                      'Gender_Female':[Gender_Female],
                       'Gender_Male':[Gender_Male],
-                      'Gender_Female':[Gender_Female], 
                       'Gender_Other':[Gender_Other],
                       'Married_No':[Married_No], 
                       'Married_Yes':[Married_Yes], 
