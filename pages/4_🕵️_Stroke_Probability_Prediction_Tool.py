@@ -19,9 +19,9 @@ You can also modify the inputs to see how the stroke probability evolves.
 st.subheader("Choose Model Here-Under")
 # Choose Predictive Model Here-Under
 Model = st.selectbox("Models", ["Random Forest Classifier", "Gradient Boosting Classifier", "Logistic Regression"])
-pickle_in = open('C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Code\\RFC.pkl', 'rb')
-pickle_in2 = open('C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Code\\GBC.pkl', 'rb')
-pickle_in3 = open('C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Code\\LR.pkl', 'rb')
+pickle_in = open('Code\\RFC.pkl', 'rb')
+pickle_in2 = open('Code\\GBC.pkl', 'rb')
+pickle_in3 = open('Code\\LR.pkl', 'rb')
 
 Selected_Model=pickle_in
 
@@ -140,10 +140,19 @@ def main():
                       'Smoker_Never_smoked':[Smoker_Never_smoked], 
                       'Smoker_smokes':[Smoker_smokes]
                      })   
-    
+    result=0    
     if st.button("Predict"):
         result = classifier.predict_proba(X)[:,1]
-    st.success('Stroke Probability: {}'.format(result))
+        st.markdown("#### Stroke Probability: %.2f%%" % (result[0]*100))
+
+    if result ==0:
+        st.write("Input Data")
+    elif result > 0 and result <0.1:
+        st.success("Good News! Low Probability of having a Stroke")
+    elif result >= 0.1 and result < 0.2:
+        st.warning("Carefull. Some Stroke Probabilty. Think about counsulting a doctor/specialist")
+    elif result >= 0.2:
+        st.error("High Stroke Risks! Consult a doctor/specialist")
      
 if __name__=='__main__':
     main()

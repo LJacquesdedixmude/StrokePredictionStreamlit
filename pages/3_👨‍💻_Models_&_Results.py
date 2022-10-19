@@ -47,12 +47,12 @@ if Model=="Random Forest Classifier":
 
     st.markdown('##### **ROC AUC Plot:**')
 
-    img =Image.open("C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Image\\RFCROC.png")
+    img =Image.open("Image\\RFCROC.png")
     st.image(img, caption='ROC AUC SCORE: 0.796')
 
     st.markdown('#### **Confusion Matrix:**')
 
-    img =Image.open("C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Image\\RFCCM.png")
+    img =Image.open("Image\\RFCCM.png")
     st.image(img, caption="""Confusion Matrix:[[1170  :   0]
     [  57  :   0]]
     """)
@@ -96,12 +96,12 @@ elif Model=="Gradient Boosting Classifier":
 
     st.markdown('##### **ROC AUC Plot:**')
 
-    img =Image.open("C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Image\\GBCROC.png")
+    img =Image.open("Image\\GBCROC.png")
     st.image(img, caption='ROC AUC SCORE: 0.811')
 
     st.markdown('#### **Confusion Matrix:**')
 
-    img =Image.open("C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Image\\GBCCM.png")
+    img =Image.open("Image\\GBCCM.png")
     st.image(img, caption='''Confusion Matrix:[1166  :  4]
 
     [  55  :   2]''')
@@ -152,12 +152,12 @@ elif Model=="Logistic Regression":
 
     st.markdown('##### **ROC AUC Plot:**')
 
-    img =Image.open("C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Image\\LRROC.png")
+    img =Image.open("Image\\LRROC.png")
     st.image(img, caption='ROC AUC SCORE: 0.819')
 
     st.markdown('#### **Confusion Matrix:**')
 
-    img =Image.open("C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022\\Image\\LRCM.png")
+    img =Image.open("Image\\LRCM.png")
     st.image(img, caption="""Confusion Matrix:[1164 :   6]
     [  56  :  1]]
     """)

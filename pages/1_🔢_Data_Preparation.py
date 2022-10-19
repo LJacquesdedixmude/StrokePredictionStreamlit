@@ -9,7 +9,7 @@ st.write("In this part we will try to prepare the dataset for machine learning. 
 
 st.subheader("Description of the dataset for the attributes with numerical values") 
 st.write("We can see that they are some missing values for the BMI")
-df = pd.read_csv('C:/Users/ljacquesdedixmude/streamlit_SP/Data/training-stroke.csv')
+df = pd.read_csv('Data\\training-stroke.csv')
 st.dataframe(df.describe())
 
 st.write("""

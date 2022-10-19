@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os 
+os.chdir("C:\\Users\\ljacquesdedixmude\\Git\\solvay-digital-society-stroke-prediction-hackathon-2022")
 
 st.set_page_config(
     page_title="StrokePred",
@@ -16,6 +18,8 @@ st.markdown("Stroke, (un accident vasculaire cérébral (AVC) in French and cere
 st.markdown("In this project we will train different Machine Learning Models to predict probabilities of having a stroke based on health related attributes (e.g. Age, Gender, BMI,...). We will here present the DataSet, the models, and an interface where you can enter your own health related data and have the (best) model predict your risk of having a stroke")
 
 st.subheader("The Data Set")
+
+st.write(os.getcwd())
 
 st.markdown("""
 
@@ -37,7 +41,7 @@ There are 4088 samples and 12 features. Short descriptions of each column are as
 """)
 
 st.subheader("The raw training dataset before any data manipulation")
-st.dataframe(pd.read_csv('C:/Users/ljacquesdedixmude/streamlit_SP/Data/training-stroke.csv'))
+st.dataframe(pd.read_csv('Data\\training-stroke.csv'))
 
 st.write("""
 
