@@ -148,11 +148,23 @@ def main():
     if result ==0:
         st.write("Input Data")
     elif result > 0 and result <0.1:
-        st.success("Good News! Low Probability of having a Stroke")
+        st.success("""
+        
+        ### Good News! Low Stroke Probability
+
+        * Looks like you're in good shape 😀 """)
     elif result >= 0.1 and result < 0.2:
-        st.warning("Carefull. Some Stroke Probabilty. Think about counsulting a doctor/specialist")
+        st.warning("""
+        
+        ### Carefull. Some Stroke Risks 
+         
+        * Think about counsulting your doctor or a specialist 🤨 """)
     elif result >= 0.2:
-        st.error("High Stroke Risks! Consult a doctor/specialist")
+        st.error("""
+        
+        ### High Stroke Risk! 
+        
+        * Think about consulting your doctor or a specialist. """)
      
 if __name__=='__main__':
     main()

@@ -74,7 +74,12 @@ if Model=="Random Forest Classifier":
     We managed to improve the ROC AUC Score of our Random Forest Classifier
 
     We can now predict stroke probability for the individuals of the testing-stroke dataset, then format and submit results on kaggle.
+    
     """)
+    st.markdown('#### **SHAP Values:**')
+
+    img = Image.open("Image\\SHAPRFC.png")
+    st.image(img, caption="SHAP Values for Random Forest Classifiers")
 
 elif Model=="Gradient Boosting Classifier":
     st.markdown("## **Gradient Boosting Classifier**")
@@ -169,3 +174,8 @@ elif Model=="Logistic Regression":
     * If we look at the confusion matrix we can see that on the model predicted 7 Strokes and got 6 accurate
 
     """)
+
+    st.markdown('#### **SHAP Values:**')
+
+    img = Image.open("Image\\SHAPLR.png")
+    st.image(img, caption="SHAP Values for Logistic Regression")
