@@ -2,7 +2,10 @@ import pandas as pd
 import numpy as np
 import pickle
 import streamlit as st
+from streamlit_shap import st_shap
 from PIL import Image
+import shap
+shap.initjs()
 
 st.title("Stroke Probability Prediction Tool")
 
@@ -58,7 +61,7 @@ def main():
     Employment_Type = st.selectbox("Employement Type", ["Private", "Children", "Government Job", "Self Employed", "Never Worked"])
     Urban_Rural = st.radio("Urban Rural", ["Urban", "Rural"])
     Smoker = st.selectbox("Smoker", ["Unknown", "Never Smoked", "Formerly Smoked", "Smokes"])
-    BodyMassIndex = st.number_input("BMI", 0.01, 50.01, help="Body Mass Index Formula = Weight (in Kg) / Height (Meter)^2")
+    BodyMassIndex = st.number_input("BMI", 0.01, 50.01, value=20.00,help="Body Mass Index Formula = Weight (in Kg) / Height (Meter)^2")
     Hypertension = st.radio("Hypertension", ["Yes", "No"])
     Had_Heart_Disease = st.radio("Had Heart Disease", ["Yes", "No"])
     Mean_Glucose_Level = st.number_input("Mean Glucose Level", 40.01, 300.01, value=106.02, help="if you don't know your Mean Glucose Level, 106 mg/ dL is an average value. ")
@@ -144,9 +147,18 @@ def main():
     if st.button("Predict"):
         result = classifier.predict_proba(X)[:,1]
         st.markdown("#### Stroke Probability: %.2f%%" % (result[0]*100))
+        if Model=="Random Forest Classifier":
+            explainer = shap.TreeExplainer(classifier, X)
+            choosen_instance = X
+            shap_values = explainer.shap_values(X)
+            st_shap(shap.force_plot(explainer.expected_value, shap_values[0,:]))
+            st.write(shap_values)
+            # st.write(shap.force_plot(explainer.expected_value, shap_values[:,:], matplotlib=True), unsafe_allow_html=True)
+
+
 
     if result ==0:
-        st.write("Input Data")
+        st.write("Input your data")
     elif result > 0 and result <0.1:
         st.success("""
         

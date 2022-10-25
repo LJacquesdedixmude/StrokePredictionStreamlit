@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 import streamlit as st
 from PIL import Image
+colormap = sns.color_palette("Blues", as_cmap=True)
 
 st.title("Models & Results")
 
@@ -52,13 +53,14 @@ if Model=="Random Forest Classifier":
 
     st.markdown('#### **Confusion Matrix:**')
 
-    img =Image.open("Image\\RFCCM.png")
-    st.image(img, caption="""Confusion Matrix:[[1170  :   0]
-    [  57  :   0]]
-    """)
+    fig, ax = plt.subplots()
+    sns.heatmap(np.array([[1170, 0], [57, 0]]), ax=ax, annot=True, fmt="d", cmap=colormap)
+    plt.xlabel('Predicted')
+    plt.ylabel('Expected')
+    st.write(fig)
 
     st.markdown("""
-    * The RFC Model classified all individuals as No Stroke, even if it's true for 1170 individuals we still have 57 missclassified indiviuals. This result is a bit predictable with unbalanced datasets.
+    * The RFC Model classified all individuals as No Stroke, even if it's true for 1170 individuals we still have 57 missclassified indiviuals. This result is a bit predictable with unbalanced datasets. But still have to be dealt with.
 
     ### Hyperameter Tuning with Grid Search 
 
@@ -106,11 +108,12 @@ elif Model=="Gradient Boosting Classifier":
 
     st.markdown('#### **Confusion Matrix:**')
 
-    img =Image.open("Image\\GBCCM.png")
-    st.image(img, caption='''Confusion Matrix:[1166  :  4]
-
-    [  55  :   2]''')
-
+    fig, ax = plt.subplots()
+    sns.heatmap(np.array([[1166, 4], [55, 2]]), ax=ax, annot=True, fmt="d", cmap=colormap)
+    plt.xlabel('Predicted')
+    plt.ylabel('Expected')
+    st.write(fig)
+    
     st.markdown("""
 
     * If we refer to the ROC AUC Score, the model performs bettre than the Random Forest Classifier before Hyperparameter tuning but not as well as the RFC after hyperparameter tuning.
@@ -162,11 +165,12 @@ elif Model=="Logistic Regression":
 
     st.markdown('#### **Confusion Matrix:**')
 
-    img =Image.open("Image\\LRCM.png")
-    st.image(img, caption="""Confusion Matrix:[1164 :   6]
-    [  56  :  1]]
-    """)
-
+    fig, ax = plt.subplots()
+    sns.heatmap(np.array([[1164, 6], [56, 1]]), ax=ax, annot=True, fmt="d", cmap=colormap)
+    plt.xlabel('Predicted')
+    plt.ylabel('Expected')
+    st.write(fig)
+    
     st.markdown("""
 
     * If we refer to ROC AUC, the Logistic Regression Model performs slightly better than the Gradient Boosting Classifier Model, but not as well as the tuned GBC Model. 
