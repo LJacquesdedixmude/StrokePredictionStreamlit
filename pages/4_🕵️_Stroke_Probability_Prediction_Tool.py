@@ -147,34 +147,32 @@ def main():
     if st.button("Predict"):
         result = classifier.predict_proba(X)[:,1]
         st.markdown("#### Stroke Probability: %.2f%%" % (result[0]*100))
-        if Model=="Random Forest Classifier":
-            explainer = shap.TreeExplainer(classifier, X)
-            choosen_instance = X
-            shap_values = explainer.shap_values(X)
-            st_shap(shap.force_plot(explainer.expected_value, shap_values[0,:]))
-            st.write(shap_values)
+        # if Model=="Random Forest Classifier":
+            # explainer = shap.TreeExplainer(classifier, X)
+            # choosen_instance = X
+            # shap_values = explainer.shap_values(X)
+            # st_shap(shap.force_plot(explainer.expected_value, shap_values[0,:], X.iloc[0,:]))
+            # st.write(shap_values)
             # st.write(shap.force_plot(explainer.expected_value, shap_values[:,:], matplotlib=True), unsafe_allow_html=True)
-
-
 
     if result ==0:
         st.write("Input your data")
-    elif result > 0 and result <0.1:
+    elif result > 0 and result <0.05:
         st.success("""
         
         ### Good News! Low Stroke Probability
 
         * Looks like you're in good shape 😀 """)
-    elif result >= 0.1 and result < 0.2:
+    elif result >= 0.05 and result < 0.15:
         st.warning("""
         
         ### Carefull. Some Stroke Risks 
          
         * Think about counsulting your doctor or a specialist 🤨 """)
-    elif result >= 0.2:
+    elif result >= 0.15:
         st.error("""
         
-        ### High Stroke Risk! 
+        ### Important Stroke Risk! 
         
         * Think about consulting your doctor or a specialist. """)
      
