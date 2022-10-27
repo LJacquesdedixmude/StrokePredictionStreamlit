@@ -35,6 +35,7 @@ There are 4088 samples and 12 features. Short descriptions of each column are as
 - **Mean_Glucose_Level**: Mean glucose level in the blood of the patient
 - **Stroke**: Did the patient had a stroke (1=yes, 0=no) Target Column
 
+
 """)
 
 st.subheader("The raw training dataset before any data manipulation")
