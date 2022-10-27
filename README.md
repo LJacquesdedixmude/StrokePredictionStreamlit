@@ -1,3 +1,7 @@
+**Proejct of Lucien Jacques de Dixmude Date: October 2022**
+Project in the context of an internship with Business&Decision BE. With the supervision and help of Thomas Dekelver.
+
+
 ## Streamlit-Stroke_Prediction_Project
 
 This multi-page app is a demo of our skills applied to a usecase of predicting Stroke Probability. 
@@ -14,3 +18,4 @@ Stroke_Prediction_Project_Home is the file that you run to launch the streamlit 
 StrokeProject__1 is the original Python file that was used for the training and testing of different models. 
 
 You can access the streamlit application with the following link: https://ljacquesdedixmude-strokep-stroke-prediction-project-home-f05xxf.streamlitapp.com/
+
