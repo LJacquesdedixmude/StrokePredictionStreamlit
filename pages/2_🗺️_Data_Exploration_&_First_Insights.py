@@ -7,6 +7,7 @@ st.title("Data Exploration & First Insights")
 
 st.write("In this part we will discover the dataset and try to find first insights on the datset and on our Stroke Preidction problem. We will plot and look at the distributions of the different attributes to understand the dataset better. We will also look at the correlation matrix ")
 
+
 df = pd.read_csv('Data/training-stroke.csv')
 
 st.write("A desciption of the DataSet for the attributes with numerical values.")
