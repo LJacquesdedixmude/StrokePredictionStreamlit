@@ -38,7 +38,7 @@ There are 4088 samples and 12 features. Short descriptions of each column are as
 """)
 
 st.subheader("The raw training dataset before any data manipulation")
-st.dataframe(pd.read_csv('Data\\training-stroke.csv'))
+st.dataframe(pd.read_csv('Data/training-stroke.csv'))
 
 st.write("""
 
