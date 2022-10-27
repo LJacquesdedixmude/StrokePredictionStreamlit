@@ -3,8 +3,6 @@ import numpy as np
 import pickle
 import streamlit as st
 from PIL import Image
-import shap
-shap.initjs()
 
 st.title("Stroke Probability Prediction Tool")
 
