@@ -1,6 +1,5 @@
-**Proejct of Lucien Jacques de Dixmude Date: October 2022**
-Project in the context of an internship with Business&Decision BE. With the supervision and help of Thomas Dekelver.
-
+Project of Lucien Jacques de Dixmude in the context of an internship with Business&Decision BE. With the supervision and help of Thomas Dekelver.
+Date: October 2022
 
 ## Streamlit-Stroke_Prediction_Project
 
