@@ -12,3 +12,5 @@ In the Data Folder you have 3 Datasets. Training-Stroke is the dataset where you
 Stroke_Prediction_Project_Home is the file that you run to launch the streamlit multi-page app.
 
 StrokeProject__1 is the original Python file that was used for the training and testing of different models. 
+
+You can access the streamlit application with the following link: https://ljacquesdedixmude-strokep-stroke-prediction-project-home-f05xxf.streamlitapp.com/
