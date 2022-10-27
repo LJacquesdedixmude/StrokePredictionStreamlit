@@ -19,9 +19,9 @@ You can also modify the inputs to see how the stroke probability evolves.
 st.subheader("Choose Model Here-Under")
 # Choose Predictive Model Here-Under
 Model = st.selectbox("Models", ["Random Forest Classifier", "Gradient Boosting Classifier", "Logistic Regression"])
-pickle_in = open('Code\\RFC.pkl', 'rb')
-pickle_in2 = open('Code\\GBC.pkl', 'rb')
-pickle_in3 = open('Code\\LR.pkl', 'rb')
+pickle_in = open('Code/RFC.pkl', 'rb')
+pickle_in2 = open('Code/GBC.pkl', 'rb')
+pickle_in3 = open('Code/LR.pkl', 'rb')
 
 Selected_Model=pickle_in
 

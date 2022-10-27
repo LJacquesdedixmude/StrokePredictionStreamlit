@@ -47,7 +47,7 @@ if Model=="Random Forest Classifier":
 
     st.markdown('##### **ROC AUC Plot:**')
 
-    img =Image.open("Image\\RFCROC.png")
+    img =Image.open("Image/RFCROC.png")
     st.image(img, caption='ROC AUC SCORE: 0.796')
 
     st.markdown('#### **Confusion Matrix:**')
@@ -79,7 +79,7 @@ if Model=="Random Forest Classifier":
     """)
     st.markdown('#### **SHAP Values:**')
 
-    img = Image.open("Image\\SHAPRFC.png")
+    img = Image.open("Image/SHAPRFC.png")
     st.image(img, caption="SHAP Values for Random Forest Classifiers")
 
 elif Model=="Gradient Boosting Classifier":
@@ -102,7 +102,7 @@ elif Model=="Gradient Boosting Classifier":
 
     st.markdown('##### **ROC AUC Plot:**')
 
-    img =Image.open("Image\\GBCROC.png")
+    img =Image.open("Image/GBCROC.png")
     st.image(img, caption='ROC AUC SCORE: 0.811')
 
     st.markdown('#### **Confusion Matrix:**')
@@ -159,7 +159,7 @@ elif Model=="Logistic Regression":
 
     st.markdown('##### **ROC AUC Plot:**')
 
-    img =Image.open("Image\\LRROC.png")
+    img =Image.open("Image/LRROC.png")
     st.image(img, caption='ROC AUC SCORE: 0.819')
 
     st.markdown('#### **Confusion Matrix:**')
@@ -180,5 +180,5 @@ elif Model=="Logistic Regression":
 
     st.markdown('#### **SHAP Values:**')
 
-    img = Image.open("Image\\SHAPLR.png")
+    img = Image.open("Image/SHAPLR.png")
     st.image(img, caption="SHAP Values for Logistic Regression")
