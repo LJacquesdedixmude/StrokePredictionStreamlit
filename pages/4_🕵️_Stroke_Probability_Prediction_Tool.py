@@ -4,6 +4,7 @@ import pickle
 import streamlit as st
 from PIL import Image
 
+
 st.title("Stroke Probability Prediction Tool")
 
 st.markdown("""
